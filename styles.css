@@ -6,11 +6,14 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background-color: #f0f0f0;
   font-family: "Roboto", Arial, sans-serif;
+  position: relative;
+  padding-bottom: 60px;
 }
 
 .calculator {
@@ -82,4 +85,25 @@ button {
 
 button:active {
   transform: scale(0.98);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.createdBy, .github {
+  margin: 8px;
+}
+
+.github {
+  width: 25px;
+}
+
+.github:hover {
+  transform: scale(1.04);
 }

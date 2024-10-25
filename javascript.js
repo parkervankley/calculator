@@ -70,10 +70,10 @@ function equal() {
 
   if (displayValue === 'NaN') return;
 
-  if (parts.length != 3 || parts[2] === '') return;
+  if (parts.length != 3 || parts[parts.length - 1] === '') return;
 
   const firstNumber = parts[0];
-  const lastNumber = parts[2];
+  const lastNumber = parts[parts.length - 1];
   const operator = parts[1];
 
   display.textContent = fitToDisplay(operate(firstNumber, lastNumber, operator));
@@ -87,15 +87,15 @@ function switchSign() {
   displayValue = display.textContent;
 
   const parts = displayValue.split(/([÷×−+])/);
-  const lastNumber = parts[2];
+  const lastNumber = parts[parts.length - 1];
 
   if (displayValue === 'NaN') return;
 
   if (lastNumber) {
     if (lastNumber.startsWith('(') && lastNumber.endsWith(')')) {
-      parts[2] = lastNumber.slice(2, -1);
+      parts[parts.length - 1] = lastNumber.slice(2, -1);
     } else if (displayValue.length <= 12) {
-      parts[2] = `(-${lastNumber})`
+      parts[parts.length - 1] = `(-${lastNumber})`
     }
   }
 
@@ -106,12 +106,12 @@ function percent() {
   displayValue = display.textContent;
 
   const parts = displayValue.split(/([÷×−+])/);
-  const lastNumber = parts[2];
+  const lastNumber = parts[parts.length - 1];
 
   if (displayValue === 'NaN') return;
 
   if (lastNumber) {
-    parts[2] = lastNumber * .01;
+    parts[parts.length - 1] = lastNumber * .01;
   }
 
   display.textContent = fitToDisplay(parts.join(''));
@@ -121,15 +121,15 @@ function backspace() {
   displayValue = display.textContent;
 
   const parts = displayValue.split(/([÷×−+])/);
-  const lastNumber = parts[2];
+  const lastNumber = parts[parts.length - 1];
 
   if (displayValue === 'NaN') {
     clearDisplay();
   } else if (lastNumber) {
     if (lastNumber.startsWith('(') && lastNumber.endsWith(')')) {
-      parts[2] = lastNumber.slice(2, -1);
+      parts[parts.length - 1] = lastNumber.slice(2, -1);
     } else {
-      parts[2] = lastNumber.slice(0, -1)
+      parts[parts.length - 1] = lastNumber.slice(0, -1)
     }
     display.textContent = fitToDisplay(parts.join(''));
   } else {
@@ -146,7 +146,7 @@ function fitToDisplay(value) {
   }
 
   const parts = value.split(/([÷×−+*])/);
-  const lastNumber = parts[2];
+  const lastNumber = parts[parts.length - 1];
   const restOfExpression = parts.slice(0, -1).join('');
   
   // Calculate available space for last number
