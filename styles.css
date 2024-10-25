@@ -26,7 +26,7 @@ body {
   border-radius: 8px;
   padding: 20px;
   text-align: right;
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin-bottom: 20px;
   min-height: 70px;
 }
@@ -62,18 +62,22 @@ button {
   grid-column: span 1;
 }
 
-.mods {
+.modifier {
   background-color: #dadce0;
   color: #202124;
-  grid-column: span 2;
+  grid-column: span 1;
 }
 
-button:hover {
+.number:hover {
   background-color: #e0e0e0;
 }
 
+.modifier:hover, .operator:hover {
+  background-color: #ebeff4;
+}
+
 .equal:hover {
-  background-color: #3b78e7;
+  background-color: #3172e0;
 }
 
 button:active {

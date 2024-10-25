@@ -9,32 +9,34 @@
 </head>
 <body>
   <div class="calculator">
-    <div class="display"></div>
+    <div class="display" id="display"></div> <!-- 15 character max -->
     <div class="buttons">
-        <button class="mods">←</button>
-        <button class="mods">C</button>
-        
-        <button class="number">7</button>
-        <button class="number">8</button>
-        <button class="number">9</button>
-        <button class="operator">÷</button>
-        
-        <button class="number">4</button>
-        <button class="number">5</button>
-        <button class="number">6</button>
-        <button class="operator">×</button>
-        
-        <button class="number">1</button>
-        <button class="number">2</button>
-        <button class="number">3</button>
-        <button class="operator">−</button>
-        
-        <button class="number">0</button>
-        <button class="number">.</button>
-        <button class="equal">=</button>
-        <button class="operator">+</button>
+      <button class="modifier" onclick="clearDisplay()">C</button>
+      <button class="modifier" onclick="switchSign()">±</button>
+      <button class="modifier" onclick="percent()">%</button>
+      <button class="modifier" onclick="backspace()">←</button>
+      
+      <button class="number" onclick="updateDisplay('7')">7</button>
+      <button class="number" onclick="updateDisplay('8')">8</button>
+      <button class="number" onclick="updateDisplay('9')">9</button>
+      <button class="operator" onclick="updateDisplay('÷')">÷</button>
+      
+      <button class="number" onclick="updateDisplay('4')">4</button>
+      <button class="number" onclick="updateDisplay('5')">5</button>
+      <button class="number" onclick="updateDisplay('6')">6</button>
+      <button class="operator" onclick="updateDisplay('×')">×</button>
+      
+      <button class="number" onclick="updateDisplay('1')">1</button>
+      <button class="number" onclick="updateDisplay('2')">2</button>
+      <button class="number" onclick="updateDisplay('3')">3</button>
+      <button class="operator" onclick="updateDisplay('−')">−</button>
+      
+      <button class="number" onclick="updateDisplay('0')">0</button>
+      <button class="number" onclick="updateDisplay('.')">.</button>
+      <button class="equal" onclick="equal()">=</button>
+      <button class="operator" onclick="updateDisplay('+')">+</button>
     </div>
-</div>
+  </div>
 
   <script src="javascript.js"></script>
 </body>
