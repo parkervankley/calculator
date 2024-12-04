@@ -10,4 +10,4 @@ Given the time that I spent on this (~1 full day), I am very happy with the resu
 
 Visit https://parkervankley.github.io/calculator/ for a live demo!
 
-Thanks for checking this out! <3 Parker
+Thanks for checking this out!
